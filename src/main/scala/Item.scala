@@ -1,3 +1,1 @@
-case class Item(
-               value : Int
-               )
+case class Item( value : Int)
