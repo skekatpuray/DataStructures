@@ -8,10 +8,10 @@ class Stack (var initialSize : Int) {
 
   def pop() : Int = {
     if (_index > 0) {
-      val item = itemArray(_index)
+      val itemValue = itemArray(_index).value
       itemArray(_index) = null
       _index = _index - 1
-      item.value
+      itemValue
     }
     else {
       throw StackEmptyException("Stack is empty")
