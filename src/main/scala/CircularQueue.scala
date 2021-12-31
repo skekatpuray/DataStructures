@@ -12,7 +12,6 @@ class CircularQueue (var initialSize : Int ) {
     } else {
       println(s"Queue is full!!  Unable to add $item")
     }
-
   }
 
   def dequeue() : Int = {
@@ -28,7 +27,7 @@ class CircularQueue (var initialSize : Int ) {
     }
   }
 
-  def printQueue(): Unit = {
+  def printQueue() : Unit = {
     if (!isEmpty){
       for (i <- front to (rear - 1)){
         print(s"${items(i % initialSize).value} " )
@@ -37,7 +36,6 @@ class CircularQueue (var initialSize : Int ) {
     }
     else
       println("Empty Queue!")
-
   }
 
   def isFull : Boolean = (rear - front == 4)
