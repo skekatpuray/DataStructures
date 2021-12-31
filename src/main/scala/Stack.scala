@@ -10,7 +10,7 @@ class Stack (var initialSize : Int) {
     if (_index > 0) {
       val itemValue = itemArray(_index).value
       itemArray(_index) = null
-      _index = _index - 1
+      _index -= -1
       itemValue
     }
     else {
@@ -18,9 +18,11 @@ class Stack (var initialSize : Int) {
     }
   }
 
-  def push(item : Int): Unit ={
-    itemArray(_index + 1) = Item(item)
-    _index = _index + 1
+  def push(item : Int): Unit = {
+    if (_index <= initialSize){
+      itemArray(_index + 1) = Item(item)
+      _index += 1
+    }
   }
 
   def peek() : Int = {

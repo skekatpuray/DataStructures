@@ -1,21 +1,19 @@
 object Test extends App {
 
+  val cq = new CircularQueue(4)
+  cq.enqueue(1)
+  cq.enqueue(2)
+  cq.enqueue(3)
+  cq.enqueue(4)
+  cq.printQueue()
 
-  val stack = new Stack(10)
+  println(s"Dequeuing: ${cq.dequeue()}")
 
-  stack.push(10)
-  stack.push(11)
-  stack.push(12)
+  println(s"Dequeuing: ${cq.dequeue()}")
 
-
-
-  println(stack.pop())
-  println(stack.pop())
-  println(stack.pop())
-  println(stack.pop())
-
-
-
-
+  cq.enqueue(5)
+  cq.printQueue()
+  cq.enqueue(6)
+  cq.printQueue()
 
 }
