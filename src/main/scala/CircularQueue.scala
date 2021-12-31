@@ -6,13 +6,17 @@ class CircularQueue (var initialSize : Int ) {
   private val items = new Array[Item](initialSize)
 
   def enqueue(item : Int): Unit = {
-    items(rear % initialSize) = Item(item)
-    rear += 1
+    if (isFull == false) {
+      items(rear % initialSize) = Item(item)
+      rear += 1
+    } else {
+      println(s"Queue is full!!  Unable to add $item")
+    }
+
   }
 
   def dequeue() : Int = {
     if (!isEmpty) {
-
       val item = items(front % initialSize)
       items(front % initialSize) = null
       front += 1
@@ -32,13 +36,11 @@ class CircularQueue (var initialSize : Int ) {
       println()
     }
     else
-      println("-----Empty Queue-----")
+      println("Empty Queue!")
 
   }
 
-  def isFull : Boolean = {
-    false
-  }
+  def isFull : Boolean = (rear - front == 4)
 
   def isEmpty : Boolean = (front == rear)
 }
