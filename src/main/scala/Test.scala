@@ -5,7 +5,6 @@ object Test extends App {
   cq.enqueue(2)
   cq.enqueue(3)
   cq.enqueue(4)
-  cq.printQueue()
 
   println(s"Dequeuing: ${cq.dequeue()}")
   cq.printQueue()
@@ -16,7 +15,9 @@ object Test extends App {
   println(s"Dequeuing: ${cq.dequeue()}")
   cq.printQueue()
 
-  println(s"Dequeuing: ${cq.dequeue()}")
+
+  val output = cq.dequeue()
+  println(s"Dequeuing: $output")
   cq.printQueue()
 
 

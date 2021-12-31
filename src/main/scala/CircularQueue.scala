@@ -11,28 +11,34 @@ class CircularQueue (var initialSize : Int ) {
   }
 
   def dequeue() : Int = {
-    if (isEmpty){
+    if (!isEmpty) {
+
       val item = items(front % initialSize)
       items(front % initialSize) = null
       front += 1
       item.value
     }
     else {
-      println("Empty queue")
+      println("-----Empty Queue-----")
       0
     }
   }
 
   def printQueue(): Unit = {
-    for (i <- front to (rear - 1)){
-      print(s"${items(i % initialSize).value} " )
+    if (!isEmpty){
+      for (i <- front to (rear - 1)){
+        print(s"${items(i % initialSize).value} " )
+      }
+      println()
     }
-    println()
+    else
+      println("-----Empty Queue-----")
+
   }
 
   def isFull : Boolean = {
     false
   }
 
-  def isEmpty : Boolean =  (front % initialSize == rear % initialSize)
+  def isEmpty : Boolean = (front == rear)
 }
