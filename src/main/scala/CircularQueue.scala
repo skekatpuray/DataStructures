@@ -5,16 +5,22 @@ class CircularQueue (var initialSize : Int ) {
 
   private val items = new Array[Item](initialSize)
 
-  def enqueue(item : Int): Unit ={
+  def enqueue(item : Int): Unit = {
     items(rear % initialSize) = Item(item)
     rear += 1
   }
 
   def dequeue() : Int = {
-    val item = items(front % initialSize)
-    items(front % initialSize) = null
-    front += 1
-    item.value
+    if (isEmpty){
+      val item = items(front % initialSize)
+      items(front % initialSize) = null
+      front += 1
+      item.value
+    }
+    else {
+      println("Empty queue")
+      0
+    }
   }
 
   def printQueue(): Unit = {
@@ -22,6 +28,11 @@ class CircularQueue (var initialSize : Int ) {
       print(s"${items(i % initialSize).value} " )
     }
     println()
-
   }
+
+  def isFull : Boolean = {
+    false
+  }
+
+  def isEmpty : Boolean =  (front % initialSize == rear % initialSize)
 }

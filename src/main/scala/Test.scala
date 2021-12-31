@@ -8,12 +8,16 @@ object Test extends App {
   cq.printQueue()
 
   println(s"Dequeuing: ${cq.dequeue()}")
+  cq.printQueue()
 
   println(s"Dequeuing: ${cq.dequeue()}")
+  cq.printQueue()
 
-  cq.enqueue(5)
+  println(s"Dequeuing: ${cq.dequeue()}")
   cq.printQueue()
-  cq.enqueue(6)
+
+  println(s"Dequeuing: ${cq.dequeue()}")
   cq.printQueue()
+
 
 }

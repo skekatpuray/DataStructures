@@ -4,12 +4,12 @@ class Stack (var initialSize : Int) {
 
   private var _index : Int = 0
 
-  private val itemArray = new Array[Item](initialSize)
+  private val items = new Array[Item](initialSize)
 
   def pop() : Int = {
     if (_index > 0) {
-      val itemValue = itemArray(_index).value
-      itemArray(_index) = null
+      val itemValue = items(_index).value
+      items(_index) = null
       _index -= -1
       itemValue
     }
@@ -20,7 +20,7 @@ class Stack (var initialSize : Int) {
 
   def push(item : Int): Unit = {
     if (_index <= initialSize){
-      itemArray(_index + 1) = Item(item)
+      items(_index + 1) = Item(item)
       _index += 1
     }
   }
