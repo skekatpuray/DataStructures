@@ -1,31 +1,19 @@
 object Test extends App {
 
+  val cq = new CircularQueue(4)
 
-  throwFullQueueError()
-
-
-
-  def throwFullQueueError(): Unit = {
-    val cq = new CircularQueue(4)
-    cq.enqueue(1)
-    cq.enqueue(2)
-    cq.enqueue(3)
-    cq.enqueue(4)
-    cq.printQueue()       // Print the contents
-    cq.enqueue(5)   // Throw error
+  //Create queue with 4 elements populated
+  for (i <- 1 to 4){
+    cq.enqueue(i)
   }
+  cq.printQueue()
 
-  def throwEmptyQueueError(): Unit ={
-    val cq = new CircularQueue(3)
-    cq.enqueue(1)
-    cq.enqueue(2)
-    cq.enqueue(3)
-    cq.printQueue()       // Print the contents
 
+  //Perform dequeue/enqueue to view the circular nature
+  for (i <- 5 to 10){
     cq.dequeue()
-    cq.dequeue()
-    cq.dequeue()
-    cq.dequeue()
+    cq.enqueue(i)
+    cq.printQueue()
   }
 
 }
