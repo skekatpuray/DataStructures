@@ -1,3 +1,5 @@
+import java.util.NoSuchElementException
+
 class CircularQueue (var initialSize : Int ) {
 
   private var front = 0
@@ -10,7 +12,7 @@ class CircularQueue (var initialSize : Int ) {
       items(rear % initialSize) = Item(item)
       rear += 1
     } else {
-      println(s"Queue is full!!  Unable to add $item")
+      throw exceptions.QueueMaxCapacityReachedException(s"Queue is full!!  Unable to add $item")
     }
   }
 
@@ -22,8 +24,7 @@ class CircularQueue (var initialSize : Int ) {
       item.value
     }
     else {
-      println("-----Empty Queue-----")
-      0
+      throw exceptions.EmptyQueueException("-----Empty Queue-----")
     }
   }
 
