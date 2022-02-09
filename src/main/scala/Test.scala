@@ -1,3 +1,5 @@
+import datastructures.CircularQueue
+
 object Test extends App {
 
   val cq = new CircularQueue(4)

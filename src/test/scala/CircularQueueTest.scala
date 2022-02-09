@@ -1,3 +1,4 @@
+import datastructures.CircularQueue
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.must.Matchers._
 

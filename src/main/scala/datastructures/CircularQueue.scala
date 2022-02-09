@@ -1,4 +1,4 @@
-import java.util.NoSuchElementException
+package datastructures
 
 class CircularQueue (var initialSize : Int ) {
 

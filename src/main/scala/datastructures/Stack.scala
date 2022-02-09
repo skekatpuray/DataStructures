@@ -1,3 +1,5 @@
+package datastructures
+
 import exceptions.StackEmptyException
 
 class Stack (var initialSize : Int) {
@@ -14,7 +16,7 @@ class Stack (var initialSize : Int) {
       itemValue
     }
     else {
-      throw StackEmptyException("Stack is empty")
+      throw StackEmptyException("datastructures.Stack is empty")
     }
   }
 
